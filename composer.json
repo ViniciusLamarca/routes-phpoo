@@ -1,0 +1,22 @@
+{
+    "name": "vinicius/php-poo",
+    "authors": [
+        {
+            "name": "vinicius",
+            "email": "vinicius_lamarca@hotmail.com"
+        }
+    ],
+    "require": {
+        "league/plates": "^3.5",
+        "symfony/var-dumper": "^6.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "app\\": "app/"
+        }
+    },
+    "files": [
+       "App/helpers/json.php",
+       "App/helpers/validations.php"	
+    ]
+}

@@ -1,0 +1,176 @@
+/* Reset de estilos e configurações globais */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilo padrão para o body */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #f2f2f2;
+    margin: 0;
+}
+
+/* Estilos para a barra de navegação */
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Garante que a navbar esteja acima da sidebar */
+    box-shadow: 3px 4px 3px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px; /* Espaçamento interno para a navbar */
+}
+
+.navbar .logo a {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar .nav-links li {
+    margin-left: 15px;
+}
+
+.navbar .nav-links li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+}
+
+.navbar .nav-links li a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para a sidebar */
+.sidebar {
+    width: 250px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Scroll caso a altura da sidebar seja maior que a tela */
+    padding-top: 60px; /* Espaçamento para não sobrepor a navbar */
+    z-index: 900; /* Garante que a sidebar esteja abaixo da navbar */
+}
+
+.sidebar .logo {
+    background-color: #222;
+    padding: 15px;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.sidebar .sidebar-links {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar .sidebar-links li {
+    padding: 10px 15px;
+}
+
+.sidebar .sidebar-links li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+
+.sidebar .sidebar-links li.active {
+    background-color: #555;
+}
+
+.sidebar .sidebar-links li:hover {
+    background-color: #555;
+}
+
+/* Ajuste de margem para o conteúdo principal não ficar escondido sob a sidebar */
+.main-content {
+    margin-left: 250px; /* Largura da sidebar */
+    padding-top: 70px; /* Espaçamento igual ao da navbar */
+    padding-left: 20px; /* Espaçamento interno para o conteúdo principal */
+    /* Ajuste conforme necessário */
+}
+
+/* Estilo para o conteúdo principal */
+.main-content main,
+.main-content section,
+.main-content form {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px; /* Espaçamento entre os elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+.main-content main h1,
+.main-content section h1,
+.main-content form h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.main-content main p,
+.main-content section p,
+.main-content form p {
+    line-height: 1.6;
+}
+
+/* Estilo específico para formulários dentro do conteúdo principal */
+.main-content form {
+    max-width: 600px; /* Largura máxima do formulário */
+    margin: 0 auto; /* Centralizar o formulário na página */
+}
+
+.main-content form label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.main-content form input[type="text"],
+.main-content form input[type="email"],
+.main-content form textarea {
+    width: calc(100% - 20px); /* Ajuste para compensar o padding do conteúdo */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+
+.main-content form textarea {
+    height: 120px; /* Altura específica para textarea */
+}
+
+.main-content form input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.main-content form input[type="submit"]:hover {
+    background-color: #555;
+}
