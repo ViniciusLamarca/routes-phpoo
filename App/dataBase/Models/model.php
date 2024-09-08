@@ -90,4 +90,44 @@ abstract class Model
             dd($e->getMessage());
         }
     }
+
+
+    //update table set 
+    public function update(array $fieldsAndValues, string $conditions = '')
+    {
+        try {
+            // Construa a cláusula SET dinamicamente
+            $setClause = [];
+            foreach ($fieldsAndValues as $field => $value) {
+                // Para valores que são expressões, deixe como estão, caso contrário, use parâmetros
+                if (strpos($value, '=') !== false || strpos($value, 'CASE') !== false || strpos($value, 'SELECT') !== false) {
+                    $setClause[] = "{$field} = {$value}";
+                } else {
+                    $setClause[] = "{$field} = :{$field}";
+                }
+            }
+            $setClauseString = implode(', ', $setClause);
+
+            // Construa a consulta SQL final
+            $sql = "UPDATE {$this->tables} SET {$setClauseString}";
+            if ($conditions) {
+                $sql .= " WHERE {$conditions}";
+            }
+
+            $query = connection::connect()->prepare($sql);
+
+            // Associe os valores dos parâmetros
+            $params = [];
+            foreach ($fieldsAndValues as $field => $value) {
+                if (strpos($value, '=') === false && strpos($value, 'CASE') === false && strpos($value, 'SELECT') === false) {
+                    $params[":{$field}"] = $value;
+                }
+            }
+
+            $query->execute($params);
+            return $query->rowCount();
+        } catch (PDOException $e) {
+            dd($e->getMessage());
+        }
+    }
 }

@@ -12,8 +12,13 @@ class UserController extends Controller
 {
     public function edit($parameters)
     {
-        $response = request::query('page');
-        dd($response);
+        $request = request::all();
+        $parameters = $parameters[0];
+
+        $user = new User();
+        $user->update(['nome' => $request['name'], 'email' => $request['email'], 'password' => $request['password'], 'tipo_user' => $request['tipo_user']], "{$parameters}");
+        header('location: http://localhost/PHP-POO/public/user.php');
+        exit;
     }
 
     public function index()
@@ -34,5 +39,8 @@ class UserController extends Controller
         $user = new User();
         $user->delete('id', $parameters);
         header('location: http://localhost/PHP-POO/public/user.php');
+        exit;
     }
+
+    public function update($parameters) {}
 }
