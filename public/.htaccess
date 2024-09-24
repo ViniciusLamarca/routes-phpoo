@@ -1,5 +1,5 @@
 RewriteEngine On
-RewriteBase /PHP-POO/public/
+RewriteBase /PHP-POO/routes-phpoo/public/
 
 # Redireciona todas as requisições para index.php
 RewriteCond %{REQUEST_FILENAME} !-f

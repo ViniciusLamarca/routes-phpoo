@@ -1,6 +1,6 @@
 <?php $this->layout('master', ['title' => $title, 'current_page' => 'Pagina Inicial']); ?>
 
-
+<?= $_SERVER['PHP_SELF'] ?>
 
 <section>
     <h1>Home</h1>

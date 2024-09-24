@@ -1,9 +1,10 @@
 <?php $this->layout('master', ['title' => $title, 'current_page' => 'Register']); ?>
 
+<?= $_SERVER['PHP_SELF'] ?>
 
 <section class="container">
     <h1>Register</h1>
-    <form action="<?= $_SERVER['PHP_SELF'] ?>/register" method="post">
+    <form action="/PHP-POO/routes-phpoo/public/register.php" method="post">
         <div class="form-group">
             <label for="name">Name</label>
             <input type="text" class="form-control" id="name" name="name" value="teste__name">

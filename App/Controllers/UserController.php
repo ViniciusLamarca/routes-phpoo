@@ -17,7 +17,7 @@ class UserController extends Controller
 
         $user = new User();
         $user->update(['nome' => $request['name'], 'email' => $request['email'], 'password' => $request['password'], 'tipo_user' => $request['tipo_user']], "{$parameters}");
-        header('location: http://localhost/PHP-POO/public/user.php');
+        header('location: /PHP-POO/routes-phpoo/public/user.php');
         exit;
     }
 
@@ -38,7 +38,7 @@ class UserController extends Controller
         $parameters = intval($parameters[0]);
         $user = new User();
         $user->delete('id', $parameters);
-        header('location: http://localhost/PHP-POO/public/user.php');
+        header('location:/PHP-POO/routes-phpoo/public/user.php');
         exit;
     }
 

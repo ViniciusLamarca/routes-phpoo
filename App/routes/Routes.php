@@ -10,21 +10,34 @@ class Routes
     {
         return [
             'get' => [
-                '/PHP-POO/public/' => 'HomeController@index',
-                '/PHP-POO/public/index.php' => 'HomeController@index',
 
-                '/PHP-POO/public/user.php' => 'UserController@index',
+                //home
+                '/PHP-POO/routes-phpoo/public/' => 'HomeController@index',
+                '/PHP-POO/routes-phpoo/public/index.php' => 'HomeController@index',
 
-                '/PHP-POO/public/user.php/delete/([0-9]+)' => 'UserController@delete',
+                //user
+                '/PHP-POO/routes-phpoo/public/user.php' => 'UserController@index',
+                '/PHP-POO/routes-phpoo/public/user.php/delete/([0-9]+)' => 'UserController@delete',
 
-                '/PHP-POO/public/products.php' => 'ProductController@index',
+                //products
+                '/PHP-POO/routes-phpoo/public/products.php' => 'ProductController@index',
 
-                '/PHP-POO/public/register.php' => 'RegisterController@Register',
+                //register
+                '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@Register',
 
             ],
             'post' => [
-                '/PHP-POO/public/user.php/edit/id=([a-zA-Z0-9]+)' => 'UserController@edit',
-                '/PHP-POO/public/register.php/([a-zA-Z0-9]+)' => 'RegisterController@insert',
+                //user
+                '/PHP-POO/routes-phpoo/public/user.php/edit/id=([a-zA-Z0-9]+)' => 'UserController@edit',
+
+                //products
+                '/PHP-POO/routes-phpoo/public/produtos.php/delete/([0-9]+)' => 'ProductController@delete',
+                '/PHP-POO/routes-phpoo/public/produtos.php/edit/([0-9]+)' => 'ProductController@edit',
+
+
+                //register
+                '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@insert',
+                '/PHP-POO/routes-phpoo/public/register.php/([a-zA-Z0-9]+)' => 'RegisterController@insert',
             ]
         ];
     }

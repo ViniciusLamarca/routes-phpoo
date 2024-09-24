@@ -18,7 +18,7 @@ class RegisterController extends Controller
 
         $register = new \app\dataBase\Models\Register();
         $register->create($teste);
-        header('location: http://localhost/PHP-POO/public/user.php');
+        header('location:  /PHP-POO/routes-phpoo/public/user.php');
         exit;
     }
 }

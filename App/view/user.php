@@ -1,6 +1,6 @@
 <?php $this->layout('master', ['title' => $title, 'current_page' => 'Usuário']); ?>
 
-
+<?= $_SERVER['PHP_SELF'] ?>
 
 <section>
     <h1>User Profile</h1>
@@ -75,7 +75,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="<?= $_SERVER['PHP_SELF'] ?>/edit/id=<?= $user->id ?>" method="post">
+                    <form action="user.php/edit/id=<?= $user->id ?>" method="post">
                         <div class="form-group">
                             <label for="name">Nome</label>
                             <input type="text" class="form-control" id="name" name="name" value="<?= $user->nome ?>">

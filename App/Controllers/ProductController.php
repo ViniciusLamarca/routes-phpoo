@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use app\core\request;
 use app\dataBase\Models\Products;
 use app\dataBase\Filters;
 use app\controllers\Controller;
@@ -16,7 +17,7 @@ class ProductController extends Controller
         $filters->join('categorias', 'produtos.categoria_id', '=', 'categorias.id', 'LEFT JOIN');
 
         $produtos = new Products();
-        $produtos->setFields('produtos.id, produtos.nome, produtos.descricao, produtos.preco, categorias.categoria as categoria_nome');
+        $produtos->setFields('produtos.id, produtos.nome, produtos.descricao, produtos.preco, categorias.categoria as categoria_nome, produtos.ativo');
         $produtos->setFilters($filters);
         $produtosFound = $produtos->fetch_all();
 
@@ -28,7 +29,16 @@ class ProductController extends Controller
         $parameters = intval($parameters[0]);
         $produto = new Products();
         $produto->delete('id', $parameters);
-        header('location: http://localhost/PHP-POO/public/products.php');
+        header('location: /PHP-POO/routes-phpoo/public/products.php');
+        exit;
+    }
+    public function edit($parameters)
+    {
+        $request = request::all();
+        $parameters = intval($parameters[0]);
+        $produto = new Products();
+        $produto->update(['nome' => $request['name'], 'descricao' => $request['desc'], 'preco' => $request['preco'], 'ativo' => $request['prod_ativo']], "id={$parameters}");
+        header('location: /PHP-POO/routes-phpoo/public/products.php');
         exit;
     }
 }
