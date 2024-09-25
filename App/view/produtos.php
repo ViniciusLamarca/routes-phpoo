@@ -1,6 +1,6 @@
-<?php $this->layout('master', ['title' => $title, 'current_page' => 'Produtos']); ?>
+<?php $this->layout('master', ['title' => $title, 'current_page' => 'Produtos', 'page' => 'products.php']); ?>
 
-<?= $_SERVER['PHP_SELF'] ?>
+
 
 <section>
     <h1>Produtos</h1>

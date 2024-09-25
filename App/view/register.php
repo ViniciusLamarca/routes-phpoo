@@ -1,6 +1,6 @@
-<?php $this->layout('master', ['title' => $title, 'current_page' => 'Register']); ?>
+<?php $this->layout('master', ['title' => $title, 'current_page' => 'Register', 'page' => 'register.php']); ?>
 
-<?= $_SERVER['PHP_SELF'] ?>
+
 
 <section class="container">
     <h1>Register</h1>

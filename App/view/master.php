@@ -42,7 +42,7 @@ function includeFiles($directory, $extension)
 </head>
 
 <body class="d-flex flex-column h-100  bg-dark text-white ">
-    <?php $this->insert('partials/menu', ['page_title' => $current_page]) ?>
+    <?php $this->insert('partials/menu', ['page_title' => $current_page, 'page' => $page]) ?>
     <main class="flex-shrink-0">
         <section>
             <?= $this->section('content') ?>

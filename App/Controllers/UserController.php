@@ -14,7 +14,6 @@ class UserController extends Controller
     {
         $request = request::all();
         $parameters = $parameters[0];
-
         $user = new User();
         $user->update(['nome' => $request['name'], 'email' => $request['email'], 'password' => $request['password'], 'tipo_user' => $request['tipo_user']], "{$parameters}");
         header('location: /PHP-POO/routes-phpoo/public/user.php');
@@ -25,13 +24,12 @@ class UserController extends Controller
     {
         $filters = new Filters();
         $filters->where('id', '>', 1);
-
         $users = new User();
         $users->setFilters($filters);
         $usersFound = $users->fetch_all();
 
 
-        $this->view('user', ['title' => 'User Profile', 'table' => $usersFound]);
+        $this->view('user', ['title' => 'User Profile', 'table' => $usersFound, 'page' => 'user.php']);
     }
     public function delete($parameters)
     {

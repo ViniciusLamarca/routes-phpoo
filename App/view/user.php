@@ -1,6 +1,6 @@
-<?php $this->layout('master', ['title' => $title, 'current_page' => 'Usuário']); ?>
+<?php $this->layout('master', ['title' => $title, 'current_page' => 'Usuário', 'page' => 'user.php']); ?>
 
-<?= $_SERVER['PHP_SELF'] ?>
+
 
 <section>
     <h1>User Profile</h1>

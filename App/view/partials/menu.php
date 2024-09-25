@@ -6,19 +6,25 @@
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a class="nav-link <?php echo ($current_page == 'index.php') ? 'active' : ''; ?>" href="index.php">
+                <a class="nav-link <?php echo ($page == 'index.php') ? 'active' : ''; ?>" href="index.php">
                     HomePage
                 </a>
             </li class="nav-item">
             <li>
-                <a class="nav-link <?php echo ($current_page == 'products.php') ? 'active' : ''; ?>" href="products.php">
+                <a class="nav-link <?php echo ($page == 'products.php') ? 'active' : ''; ?>" href="products.php">
                     Produtos
                 </a>
             </li class="nav-item">
             <li>
-                <a class="nav-link <?php echo ($current_page == 'user.php') ? 'active' : ''; ?>" href="user.php">
+                <a class="nav-link <?php echo ($page == 'user.php') ? 'active' : ''; ?>" href="user.php">
                     Usuário
                 </a>
             </li>
+            <li>
+                <a class="nav-link <?php echo ($_page == 'arvores.php') ? 'active' : ''; ?>" href="arvores.php">
+                    Arvores
+                </a>
+            </li>
+
         </ul>
 </nav>
