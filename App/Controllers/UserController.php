@@ -29,7 +29,7 @@ class UserController extends Controller
         $usersFound = $users->fetch_all();
 
 
-        $this->view('user', ['title' => 'User Profile', 'table' => $usersFound, 'page' => 'user.php']);
+        $this->view('user', ['title' => 'Usuário', 'table' => $usersFound, 'page' => 'user.php']);
     }
     public function delete($parameters)
     {

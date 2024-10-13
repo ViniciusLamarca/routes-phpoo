@@ -7,7 +7,7 @@
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a class="nav-link <?php echo ($page == 'index.php') ? 'active' : ''; ?>" href="index.php">
-                    HomePage
+                    Início
                 </a>
             </li class="nav-item">
             <li>
@@ -21,8 +21,8 @@
                 </a>
             </li>
             <li>
-                <a class="nav-link <?php echo ($_page == 'arvores.php') ? 'active' : ''; ?>" href="arvores.php">
-                    Arvores
+                <a class="nav-link <?php echo ($page == 'arvores.php') ? 'active' : ''; ?>" href="arvores.php">
+                    Árvores
                 </a>
             </li>
 

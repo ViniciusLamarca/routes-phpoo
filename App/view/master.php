@@ -29,6 +29,7 @@ function includeFiles($directory, $extension)
     <title><?= $this->e($title) ?></title>
     <?= $this->section('css'); ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
     <?php
     includeFiles(CSS_DIR, 'css');
     ?>
@@ -36,7 +37,18 @@ function includeFiles($directory, $extension)
         main {
             padding-top: calc(56px + 2.5rem);
             padding-left: 15px;
+            padding-right: 15px;
             flex: 1;
+        }
+
+        @media (max-width: 500px) {
+            main {
+                padding-top: calc(56px + 2.5rem);
+                padding-left: 5px;
+                padding-right: 35px;
+                flex: 1;
+            }
+
         }
     </style>
 </head>

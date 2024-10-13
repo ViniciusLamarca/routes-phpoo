@@ -25,6 +25,9 @@ class Routes
                 //register
                 '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@Register',
 
+                //tree
+                '/PHP-POO/routes-phpoo/public/arvores.php' => 'TreeController@index',
+
             ],
             'post' => [
                 //user
