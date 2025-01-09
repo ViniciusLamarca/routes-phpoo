@@ -29,10 +29,7 @@ function includeFiles($directory, $extension)
     <title><?= $this->e($title) ?></title>
     <?= $this->section('css'); ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-
-    <?php
-    includeFiles(CSS_DIR, 'css');
-    ?>
+    <link rel="stylesheet" href="C:\laragon\www\PHP-POO\routes-phpoo\public\current_page_css\Nav_bar.css">
     <style>
         main {
             padding-top: calc(56px + 2.5rem);
@@ -51,6 +48,10 @@ function includeFiles($directory, $extension)
 
         }
     </style>
+    <?php
+    includeFiles(CSS_DIR, 'css');
+    ?>
+
 </head>
 
 <body class="d-flex flex-column h-100  bg-dark text-white ">

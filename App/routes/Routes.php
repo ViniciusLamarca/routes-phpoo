@@ -28,6 +28,8 @@ class Routes
                 //tree
                 '/PHP-POO/routes-phpoo/public/arvores.php' => 'TreeController@index',
 
+                //chat
+                '/PHP-POO/routes-phpoo/public/chat_teste.php' => 'ChatController@index',
             ],
             'post' => [
                 //user

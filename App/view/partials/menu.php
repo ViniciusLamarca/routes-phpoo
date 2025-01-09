@@ -25,6 +25,11 @@
                     Árvores
                 </a>
             </li>
+            <li>
+                <a class="nav-link <?php echo ($page == 'chat_teste.php') ? 'active' : ''; ?>" href="chat_teste.php">
+                    Chat
+                </a>
+            </li>
 
         </ul>
 </nav>

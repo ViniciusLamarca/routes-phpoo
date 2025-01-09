@@ -1,5 +1,6 @@
 {
     "name": "vinicius/routes-phpoo",
+    "description": "Um projeto para gerenciamento de rotas com PHP POO e WebSockets usando Ratchet",
     "authors": [
         {
             "name": "vinicius",
@@ -8,11 +9,13 @@
     ],
     "require": {
         "league/plates": "^3.5",
-        "symfony/var-dumper": "^6.4"
+        "symfony/var-dumper": "^6.4",
+        "cboden/ratchet": "^0.4.4"
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app/"
+            "app\\": "app/",
+            "Api\\Websocket\\": "app/core/"
         }
     },
     "files": [
