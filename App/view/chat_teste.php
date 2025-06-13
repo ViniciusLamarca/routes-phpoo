@@ -1,42 +1,32 @@
-<?php $this->layout('master', ['title' => $title, 'current_page' => 'Pagina Inicial', 'page' => 'chat_teste.php']); ?>
+<?php $this->layout('master', ['title' => $title, 'current_page' => 'Chat', 'page' => 'chat_teste.php']); ?>
 
-<?php
-$this->start('css');
-?>
-<link rel="stylesheet" href="C:\laragon\www\PHP-POO\routes-phpoo\public\current_page_css\ChatStyle.css">
-<?php
-$this->stop();
-?>
-
-<div class="chat-container">
-    <!-- Janela de mensagens -->
-    <div class="chat-window" id="chat-window">
-        <!-- Mensagens vão aparecer aqui -->
-        <div class="message-container" id="messages">
-            <!-- Exemplo de mensagem -->
-            <div class="message sent">
-                <span class="message-user">Você:</span>
-                <span class="message-text">Oi! Como você está?</span>
-            </div>
-            <div class="message received">
-                <span class="message-user">Amigo:</span>
-                <span class="message-text">Estou bem, e você?</span>
+<section class="container mt-4">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h3>Chat</h3>
+                    <div class="alert alert-info">
+                        Bem-vindo ao chat, <?php echo htmlspecialchars($user['username']); ?>!
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div id="chat-messages" class="mb-3" style="height: 400px; overflow-y: auto;">
+                        <!-- Mensagens do chat serão exibidas aqui -->
+                    </div>
+                    <form id="chat-form">
+                        <div class="input-group">
+                            <input type="text" id="message" class="form-control" placeholder="Digite sua mensagem...">
+                            <button type="submit" class="btn btn-primary">Enviar</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- Caixa de entrada para novas mensagens -->
-    <form id="chat-form">
-        <input type="text" id="chat-input" name="message" placeholder="Digite sua mensagem..." required>
-        <button type="submit">Enviar</button>
-    </form>
-</div>
-
-
-<?php
-$this->start('js');
-?>
-<script src="C:\laragon\www\PHP-POO\routes-phpoo\public\js\Chat_js.js"></script>
-<?php
-$this->stop('js');
-?>
+<script>
+    // Aqui você pode adicionar o código JavaScript para o WebSocket
+    // quando implementar a funcionalidade de chat em tempo real
+</script>

@@ -2,17 +2,29 @@
 
 namespace app\controllers;
 
-use League\Plates\Engine;
+use app\core\View;
+use app\Middleware\AuthMiddleware;
 
 abstract class Controller
 {
     protected function view(string $view, array $data = [])
     {
-        $viewPath = '../app/view/' . $view . '.php';
-        if (!file_exists($viewPath)) {
-            throw new \Exception("View {$view} not found");
-        }
-        $template = new Engine('../app/view');
-        echo $template->render($view, $data);
+        View::render($view, $data);
+    }
+
+    protected function redirect(string $url)
+    {
+        header("Location: {$url}");
+        exit;
+    }
+
+    protected function requireAuth()
+    {
+        AuthMiddleware::isAuthenticated();
+    }
+
+    protected function requireGuest()
+    {
+        AuthMiddleware::isGuest();
     }
 }

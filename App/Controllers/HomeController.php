@@ -3,11 +3,23 @@
 namespace App\Controllers;
 
 use app\controllers\Controller;
+use app\Middleware\AuthMiddleware;
 
 class HomeController extends Controller
 {
+    public function __construct()
+    {
+        AuthMiddleware::isAuthenticated();
+    }
+
     public function index()
     {
-        $this->view('home', ['title' => 'Início', 'page_title' => 'Página Iní   cial', 'current_page' => 'index.php']);
+        $user = $_SESSION['user'];
+        $this->view('home', [
+            'title' => 'Início',
+            'page_title' => 'Página Inicial',
+            'current_page' => 'index.php',
+            'user' => $user
+        ]);
     }
 }

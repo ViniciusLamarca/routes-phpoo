@@ -1,13 +1,23 @@
 <?php
 
-namespace app\controllers;
+namespace App\Controllers;
 
 use app\controllers\Controller;
+use app\Middleware\AuthMiddleware;
 
 class ChatController extends Controller
 {
+    public function __construct()
+    {
+        $this->requireAuth();
+    }
+
     public function index()
     {
-        $this->view('chat_teste', ['title' => 'Chat']);
+        $user = $_SESSION['user'];
+        $this->view('chat_teste', [
+            'title' => 'Chat',
+            'user' => $user
+        ]);
     }
 }
