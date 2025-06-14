@@ -31,6 +31,7 @@ function includeFiles($directory, $extension)
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="C:\laragon\www\PHP-POO\routes-phpoo\public\current_page_css\Nav_bar.css">
+    <link rel="stylesheet" href="/PHP-POO/routes-phpoo/public/css/notifications.css">
     <style>
         main {
             padding-top: calc(56px + 2.5rem);
@@ -111,5 +112,6 @@ function includeFiles($directory, $extension)
 <?php
 includeFiles(JS_DIR, 'js');
 ?>
+<script src="/PHP-POO/routes-phpoo/public/js/notifications.js"></script>
 
 </html>
