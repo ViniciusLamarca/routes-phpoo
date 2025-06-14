@@ -10,7 +10,8 @@
     "require": {
         "league/plates": "^3.5",
         "symfony/var-dumper": "^6.4",
-        "cboden/ratchet": "^0.4.4"
+        "cboden/ratchet": "^0.4.4",
+        "twbs/bootstrap": "^5.3"
     },
     "autoload": {
         "psr-4": {
@@ -21,5 +22,13 @@
     "files": [
        "App/helpers/json.php",
        "App/helpers/validations.php"	
-    ]
+    ],
+    "scripts": {
+        "post-install-cmd": [
+            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+        ],
+        "post-update-cmd": [
+            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+        ]
+    }
 }

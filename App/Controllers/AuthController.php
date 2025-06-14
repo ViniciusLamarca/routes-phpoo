@@ -32,7 +32,7 @@ class AuthController extends Controller
         }
 
         require_once __DIR__ . '/../helpers/notifications.php';
-        add_notification('Email ou senha inválidos', 'danger');
+        add_notification('Email ou senha inválidos', 'aviso');
         header('Location: /PHP-POO/routes-phpoo/public/login.php');
         exit;
     }

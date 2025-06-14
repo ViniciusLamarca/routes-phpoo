@@ -1,23 +1,5 @@
 <?php
 
-define('CSS_DIR', 'css/');
-define('JS_DIR', 'js/');
-
-function includeFiles($directory, $extension)
-{
-
-    $files = glob($directory . '*.' . $extension);
-    foreach ($files as $file) {
-        $filePath = str_replace($_SERVER['DOCUMENT_ROOT'], '', $file);
-        if ($extension == 'css') {
-            echo '<link href="' . $filePath . '" rel="stylesheet">';
-        } elseif ($extension == 'js') {
-            echo '<script src="' . $filePath . '"></script>';
-        }
-    }
-}
-
-
 ?>
 
 <!DOCTYPE html>
@@ -28,9 +10,9 @@ function includeFiles($directory, $extension)
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= $this->e($title) ?></title>
     <?= $this->section('css'); ?>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/PHP-POO/routes-phpoo/public/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <link rel="stylesheet" href="C:\laragon\www\PHP-POO\routes-phpoo\public\current_page_css\Nav_bar.css">
+    <link rel="stylesheet" href="/PHP-POO/routes-phpoo/public/css/navbar.css">
     <link rel="stylesheet" href="/PHP-POO/routes-phpoo/public/css/notifications.css">
     <style>
         main {
@@ -50,10 +32,6 @@ function includeFiles($directory, $extension)
 
         }
     </style>
-    <?php
-    includeFiles(CSS_DIR, 'css');
-    ?>
-
 </head>
 
 <body class="d-flex flex-column h-100  bg-dark text-white ">
@@ -71,9 +49,8 @@ function includeFiles($directory, $extension)
 <!-- links -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/PHP-POO/routes-phpoo/public/bootstrap/js/bootstrap.bundle.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-
 
 <script>
     $(document).ready(function() {
@@ -100,18 +77,6 @@ function includeFiles($directory, $extension)
 
     }
 </script>
-<script>
-    setTimeout(function() {
-        let alerts = document.querySelectorAll('.alert');
-        alerts.forEach(function(alert) {
-            alert.classList.remove('show');
-            alert.classList.add('hide');
-        });
-    }, 4000); // 4 segundos
-</script>
-<?php
-includeFiles(JS_DIR, 'js');
-?>
 <script src="/PHP-POO/routes-phpoo/public/js/notifications.js"></script>
 
 </html>

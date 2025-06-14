@@ -1,40 +1,34 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark flex-column flex-md-row sticky-top">
-    <a class="navbar-brand custom-width" href="index.php"><?= $this->e($page_title) ?></a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm custom-navbar">
+    <a class="navbar-brand" href="/PHP-POO/routes-phpoo/public/">
+        <i class="fas fa-leaf"></i> Meu Sistema
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item">
-                <a class="nav-link <?php echo ($page == 'index.php') ? 'active' : ''; ?>" href="index.php">
-                    Início
-                </a>
+        <ul class="navbar-nav me-auto">
+            <li class="nav-item <?php echo ($page == 'index.php') ? 'active' : ''; ?>">
+                <a class="nav-link" href="index.php">Início</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link <?php echo ($page == 'products.php') ? 'active' : ''; ?>" href="products.php">
-                    Produtos
-                </a>
+            <li class="nav-item <?php echo ($page == 'products.php') ? 'active' : ''; ?>">
+                <a class="nav-link" href="products.php">Produtos</a>
             </li>
             <?php if (isset($_SESSION['user']) && $_SESSION['user']['cargo'] === 'ADMINISTRADOR'): ?>
-                <li class="nav-item">
-                    <a class="nav-link <?php echo ($page == 'user.php') ? 'active' : ''; ?>" href="user.php">
-                        Usuários
-                    </a>
+                <li class="nav-item <?php echo ($page == 'user.php') ? 'active' : ''; ?>">
+                    <a class="nav-link" href="user.php">Usuários</a>
                 </li>
             <?php endif; ?>
-            <li class="nav-item">
-                <a class="nav-link <?php echo ($page == 'chat_teste.php') ? 'active' : ''; ?>" href="chat_teste.php">
-                    Chat
-                </a>
+            <li class="nav-item <?php echo ($page == 'chat_teste.php') ? 'active' : ''; ?>">
+                <a class="nav-link" href="chat_teste.php">Chat</a>
             </li>
         </ul>
         <?php if (isset($_SESSION['user'])): ?>
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav ms-auto">
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fas fa-user"></i> <?= htmlspecialchars($_SESSION['user']['username']) ?>
                     </a>
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                    <div class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
                         <a class="dropdown-item" href="user.php">
                             <i class="fas fa-user-cog"></i> Perfil
                         </a>
