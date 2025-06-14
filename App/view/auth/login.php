@@ -8,19 +8,6 @@
                     <h3 class="text-center">Login</h3>
                 </div>
                 <div class="card-body">
-                    <?php if (isset($_SESSION['error'])): ?>
-                        <div class="alert alert-danger">
-                            <?php echo $_SESSION['error'];
-                            unset($_SESSION['error']); ?>
-                        </div>
-                    <?php endif; ?>
-
-                    <div class="alert alert-info">
-                        <small>
-                            <strong>Dica:</strong> Para login como administrador, use "admin" como usuário e sua senha de administrador.
-                        </small>
-                    </div>
-
                     <form action="/PHP-POO/routes-phpoo/public/login.php" method="post">
                         <div class="form-group mb-3">
                             <label for="email">Email ou Usuário</label>

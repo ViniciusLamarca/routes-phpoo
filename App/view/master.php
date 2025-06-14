@@ -29,6 +29,7 @@ function includeFiles($directory, $extension)
     <title><?= $this->e($title) ?></title>
     <?= $this->section('css'); ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="C:\laragon\www\PHP-POO\routes-phpoo\public\current_page_css\Nav_bar.css">
     <style>
         main {
@@ -56,6 +57,7 @@ function includeFiles($directory, $extension)
 
 <body class="d-flex flex-column h-100  bg-dark text-white ">
     <?php $this->insert('partials/menu', ['page_title' => $current_page, 'page' => $page]) ?>
+    <?php $this->insert('partials/notifications'); ?>
     <main class="flex-shrink-0">
         <section>
             <?= $this->section('content') ?>
@@ -96,6 +98,15 @@ function includeFiles($directory, $extension)
         }
 
     }
+</script>
+<script>
+    setTimeout(function() {
+        let alerts = document.querySelectorAll('.alert');
+        alerts.forEach(function(alert) {
+            alert.classList.remove('show');
+            alert.classList.add('hide');
+        });
+    }, 4000); // 4 segundos
 </script>
 <?php
 includeFiles(JS_DIR, 'js');

@@ -19,17 +19,20 @@ class AuthController extends Controller
     {
         AuthMiddleware::isGuest();
         $data = request::all();
-        
+
         $user = new User();
         $authenticated = $user->authenticate($data['email'], $data['password']);
 
         if ($authenticated) {
             $_SESSION['user'] = $authenticated;
+            require_once __DIR__ . '/../helpers/notifications.php';
+            add_notification('Bem-vindo, ' . $_SESSION['user']['username'], 'success');
             header('Location: /PHP-POO/routes-phpoo/public/');
             exit;
         }
 
-        $_SESSION['error'] = 'Email ou senha inválidos';
+        require_once __DIR__ . '/../helpers/notifications.php';
+        add_notification('Email ou senha inválidos', 'danger');
         header('Location: /PHP-POO/routes-phpoo/public/login.php');
         exit;
     }

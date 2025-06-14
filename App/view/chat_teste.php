@@ -1,5 +1,8 @@
 <?php $this->layout('master', ['title' => $title, 'current_page' => 'Chat', 'page' => 'chat_teste.php']); ?>
 
+<?php
+$this->section('css');
+?>
 <section class="container mt-4">
     <div class="row">
         <div class="col-md-12">
@@ -26,7 +29,4 @@
     </div>
 </section>
 
-<script>
-    // Aqui você pode adicionar o código JavaScript para o WebSocket
-    // quando implementar a funcionalidade de chat em tempo real
-</script>
+<?php $this->section('js'); ?>

@@ -15,7 +15,7 @@ class UserController extends Controller
         $request = request::all();
         $parameters = $parameters[0];
         $user = new User();
-        $user->update(['nome' => $request['name'], 'email' => $request['email'], 'password' => $request['password'], 'tipo_user' => $request['tipo_user']], "{$parameters}");
+        $user->update(['nome' => $request['name'], 'email' => $request['email'], 'password' => $request['password'], 'cargo' => $request['cargo']], "{$parameters}");
         header('location: /PHP-POO/routes-phpoo/public/user.php');
         exit;
     }
@@ -23,7 +23,7 @@ class UserController extends Controller
     public function index()
     {
         $filters = new Filters();
-        $filters->where('id', '>', 1);
+        $filters->where('id_usuario', '>', 1);
         $users = new User();
         $users->setFilters($filters);
         $usersFound = $users->fetch_all();
@@ -35,7 +35,7 @@ class UserController extends Controller
     {
         $parameters = intval($parameters[0]);
         $user = new User();
-        $user->delete('id', $parameters);
+        $user->delete('id_usuario', $parameters);
         header('location:/PHP-POO/routes-phpoo/public/user.php');
         exit;
     }
