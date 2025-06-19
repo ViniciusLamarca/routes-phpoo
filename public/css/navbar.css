@@ -1,25 +1,120 @@
 .custom-navbar {
-    font-size: 1.08rem;
-    letter-spacing: 0.01em;
-    padding-left: 15px;
+  font-size: 1.08rem;
+  letter-spacing: 0.01em;
+  padding-left: 15px;
+  padding-right: 15px;
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+/* Reduzir espaçamento quando sidebar está ativa */
+@media (min-width: 992px) {
+  body.has-sidebar .custom-navbar,
+  body.sidebar-compact .custom-navbar {
+    padding-left: 8px;
     padding-right: 15px;
+  }
 }
 .navbar-brand {
-    font-weight: bold;
-    font-size: 1.3rem;
-    display: flex;
-    align-items: center;
+  font-weight: bold;
+  font-size: 1.3rem;
+  display: flex;
+  align-items: center;
 }
 .navbar-brand i {
-    margin-right: 8px;
+  margin-right: 8px;
 }
 .nav-item.active .nav-link,
 .nav-link.active {
-    background: rgba(255,255,255,0.15);
-    border-radius: 6px;
-    font-weight: bold;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 6px;
+  font-weight: bold;
 }
 .dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+/* ===== ADAPTAÇÃO PARA SIDEBAR ===== */
+
+/* Responsividade do navbar para sidebar em desktop */
+@media (min-width: 992px) {
+  /* Remover estilos duplicados - controle feito pelo navbar-sidebar-integration.css */
+}
+
+/* Mobile e tablet - navbar ocupa largura total */
+@media (max-width: 991.98px) {
+  body.has-sidebar .navbar,
+  body.sidebar-compact .navbar {
+    margin-left: 0;
+    width: 100%;
+  }
+
+  /* Ajuste para botão toggle da sidebar */
+  body.has-sidebar .navbar .container,
+  body.has-sidebar .navbar .container-fluid {
+    padding-left: 60px; /* Espaço para o botão toggle */
+  }
+
+  /* Garantir que o navbar tenha z-index correto em mobile */
+  .navbar {
+    z-index: 1020; /* Abaixo da sidebar e overlay */
+  }
+}
+
+/* Ajustes para navbar fixa */
+.navbar.fixed-top,
+.navbar.sticky-top {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: auto;
+}
+
+/* Desktop com sidebar */
+@media (min-width: 992px) {
+  body.has-sidebar .navbar.fixed-top,
+  body.has-sidebar .navbar.sticky-top {
+    left: 280px;
     right: 0;
-    left: auto;
-} 
+    width: calc(100% - 280px);
+  }
+
+  body.sidebar-compact .navbar.fixed-top,
+  body.sidebar-compact .navbar.sticky-top {
+    left: 80px;
+    right: 0;
+    width: calc(100% - 80px);
+  }
+}
+
+/* Melhorias visuais */
+.navbar {
+  z-index: 1030; /* Abaixo da sidebar (1050) mas acima do conteúdo */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Animação suave para mudanças de layout */
+.navbar,
+.navbar .container,
+.navbar .container-fluid {
+  transition: all 0.3s ease;
+}
+
+/* Ajuste para dropdown em navbar adaptada */
+@media (min-width: 992px) {
+  body.has-sidebar .navbar .dropdown-menu,
+  body.sidebar-compact .navbar .dropdown-menu {
+    transform: translateX(0);
+  }
+}
+
+/* ===== ESTADOS DE LOADING ===== */
+
+/* Evitar flash durante carregamento */
+body:not(.sidebar-loaded) .navbar {
+  transition: none;
+}
+
+body.sidebar-loaded .navbar {
+  transition: margin-left 0.3s ease, width 0.3s ease;
+}
