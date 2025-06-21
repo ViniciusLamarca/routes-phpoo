@@ -226,7 +226,7 @@
   backdrop-filter: blur(15px);
   border: 1px solid rgba(102, 126, 234, 0.2);
   border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.15);
   overflow: hidden;
   opacity: 0;
   transform: translateY(10px) scale(0.95);
@@ -234,6 +234,27 @@
   list-style: none;
   margin: 0;
   padding: 0.5rem 0;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+
+/* Scrollbar personalizada para o dropdown flutuante */
+.dropdown-menu-floating::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dropdown-menu-floating::-webkit-scrollbar-track {
+  background: rgba(102, 126, 234, 0.1);
+  border-radius: 3px;
+}
+
+.dropdown-menu-floating::-webkit-scrollbar-thumb {
+  background: rgba(102, 126, 234, 0.4);
+  border-radius: 3px;
+}
+
+.dropdown-menu-floating::-webkit-scrollbar-thumb:hover {
+  background: rgba(102, 126, 234, 0.6);
 }
 
 [data-dropdown-type="floating"].show .dropdown-menu-floating {
@@ -309,6 +330,12 @@
   animation-delay: 0.25s;
 }
 
+[data-dropdown-type="floating"].show
+  .dropdown-menu-floating
+  .dropdown-link:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
 #dropdown-configuracoes.show
   .dropdown-menu-floating
   .dropdown-link:nth-child(1) {
@@ -331,6 +358,12 @@
   .dropdown-menu-floating
   .dropdown-link:nth-child(4) {
   animation-delay: 0.25s;
+}
+
+#dropdown-configuracoes.show
+  .dropdown-menu-floating
+  .dropdown-link:nth-child(5) {
+  animation-delay: 0.3s;
 }
 
 .dropdown-menu-floating .dropdown-link::before {

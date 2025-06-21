@@ -226,6 +226,14 @@ return [
                     'page' => 'settings_maintenance.php',
                     'permission' => 'ADMINISTRADOR',
                     'order' => 64
+                ],
+                [
+                    'title' => 'Database',
+                    'icon' => 'fas fa-database',
+                    'link' => 'database',
+                    'page' => 'database',
+                    'permission' => 'ADMINISTRADOR',
+                    'order' => 65
                 ]
             ]
         ],
@@ -270,66 +278,4 @@ return [
     ]
 ];
 
-/**
- * Função auxiliar para obter itens do menu
- * 
- * @param array $filters Filtros a serem aplicados
- * @return array
- */
-function getMenuItems($filters = [])
-{
-    $config = include __DIR__ . '/sidebar_config.php';
-    $items = $config['menu_items'];
-
-    // Aplicar filtros se necessário
-    if (!empty($filters['permission'])) {
-        $items = array_filter($items, function ($item) use ($filters) {
-            return $item['permission'] === null || $item['permission'] === $filters['permission'];
-        });
-    }
-
-    // Ordenar por order
-    usort($items, function ($a, $b) {
-        return ($a['order'] ?? 999) <=> ($b['order'] ?? 999);
-    });
-
-    return $items;
-}
-
-/**
- * Função para adicionar item ao menu programaticamente
- * 
- * @param array $item
- * @return bool
- */
-function addMenuItem($item)
-{
-    // Esta função seria expandida para persistir a configuração
-    // Por exemplo, salvando em arquivo JSON ou banco de dados
-    return true;
-}
-
-/**
- * Função para remover item do menu
- * 
- * @param string $itemId
- * @return bool
- */
-function removeMenuItem($itemId)
-{
-    // Esta função seria expandida para persistir a configuração
-    return true;
-}
-
-/**
- * Função para atualizar item do menu
- * 
- * @param string $itemId
- * @param array $data
- * @return bool
- */
-function updateMenuItem($itemId, $data)
-{
-    // Esta função seria expandida para persistir a configuração
-    return true;
-}
+// Funções movidas para App/helpers/sidebar_functions.php para evitar redeclaração

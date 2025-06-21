@@ -15,20 +15,27 @@
     },
     "autoload": {
         "psr-4": {
-            "app\\": "app/",
-            "Api\\Websocket\\": "app/core/"
-        }
+            "App\\": "App/",
+            "app\\": "App/"
+        },
+        "files": [
+           "App/helpers/json.php",
+           "App/helpers/notifications.php",
+           "App/helpers/app.php",
+           "app/helpers/validations.php",
+           "app/helpers/sidebar_functions.php"
+        ]
     },
-    "files": [
-       "App/helpers/json.php",
-       "App/helpers/validations.php"	
-    ],
     "scripts": {
         "post-install-cmd": [
-            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
+            "@php -r \"if(!is_dir('public/bootstrap')){mkdir('public/bootstrap',0755,true);} function copyDir($src,$dst){if(is_dir($src)){$dir=opendir($src);@mkdir($dst);while(($file=readdir($dir))!==false){if($file!='.'&&$file!='..'){copyDir($src.'/'.$file,$dst.'/'.$file);}}closedir($dir);}else{copy($src,$dst);}} copyDir('vendor/twbs/bootstrap/dist','public/bootstrap');\""
         ],
         "post-update-cmd": [
-            "cp -R vendor/twbs/bootstrap/dist public/bootstrap"
-        ]
+            "@php -r \"if(!is_dir('public/bootstrap')){mkdir('public/bootstrap',0755,true);} function copyDir($src,$dst){if(is_dir($src)){$dir=opendir($src);@mkdir($dst);while(($file=readdir($dir))!==false){if($file!='.'&&$file!='..'){copyDir($src.'/'.$file,$dst.'/'.$file);}}closedir($dir);}else{copy($src,$dst);}} copyDir('vendor/twbs/bootstrap/dist','public/bootstrap');\""
+        ],
+        "db:export": "php database_cli.php export",
+        "db:backup": "php database_cli.php backup", 
+        "db:info": "php database_cli.php info",
+        "db:list": "php database_cli.php list"
     }
 }

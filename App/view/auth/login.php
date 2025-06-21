@@ -1,4 +1,11 @@
-<?php $this->layout('guest', ['title' => $title, 'current_page' => 'Login', 'page' => 'login.php']); ?>
+<?php $this->layout('guest', ['title' => $title ?? 'Login', 'current_page' => 'Login', 'page' => 'login.php']); ?>
+
+<?php if (isset($errors['login'])): ?>
+    <div class="alert alert-danger">
+        <i class="fas fa-exclamation-triangle"></i>
+        <?= htmlspecialchars($errors['login']) ?>
+    </div>
+<?php endif; ?>
 
 <div class="card">
     <div class="card-header">
@@ -15,7 +22,8 @@
                     <i class="fas fa-envelope"></i> Email ou Usuário
                 </label>
                 <input type="text" class="form-control" id="email" name="email" required
-                    placeholder="Digite seu email ou usuário">
+                    placeholder="Digite seu email ou usuário"
+                    value="<?= htmlspecialchars($old_input['email'] ?? '') ?>">
             </div>
             <div class="form-group mb-4">
                 <label for="password" class="form-label">
@@ -31,4 +39,13 @@
             </div>
         </form>
     </div>
+</div>
+
+<!-- Link para voltar -->
+<div class="text-center mt-3">
+    <small>
+        <a href="/PHP-POO/routes-phpoo/public/" class="text-decoration-none">
+            <i class="fas fa-arrow-left"></i> Voltar ao início
+        </a>
+    </small>
 </div>

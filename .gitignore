@@ -1,3 +1,10 @@
 /vendor/
 .cursor
-.vscode
+.vscode - Comentado para manter configurações do Cursor
+.vscode/
+
+# Arquivos de contexto para Cursor AI - MANTER NO REPOSITÓRIO
+.cursor-rules
+CURSOR_CONTEXT.md  
+README_CURSOR.md
+CURSOR_CHECK.md

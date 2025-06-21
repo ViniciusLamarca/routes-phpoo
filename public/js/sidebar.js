@@ -226,8 +226,8 @@ class SidebarManager {
 
     if (!menu) return;
 
-    // Calcular posição horizontal baseada na posição real do botão
-    const leftPosition = toggleRect.right + 10; // 10px à direita do botão
+    // Calcular posição horizontal baseada na posição real do botão (mais à esquerda)
+    const leftPosition = toggleRect.right; // 20px sobrepondo o botão para a esquerda
 
     // Aplicar posição horizontal ao container principal
     target.style.left = `${leftPosition}px`;
@@ -242,9 +242,9 @@ class SidebarManager {
     const menuRect = menu.getBoundingClientRect();
     const viewportHeight = window.innerHeight;
 
-    // Calcular posição vertical baseada no centro do botão (levantado mais)
+    // Calcular posição vertical baseada no centro do botão (mais inteligente)
     let topPosition =
-      toggleRect.top + toggleRect.height / 2 - menuRect.height / 2 - 120;
+      toggleRect.top + toggleRect.height / 2 - menuRect.height / 2 - 150;
 
     // Verificar se vai ultrapassar a parte inferior da tela
     if (topPosition + menuRect.height > viewportHeight - 20) {
@@ -254,6 +254,13 @@ class SidebarManager {
     // Verificar se vai ultrapassar a parte superior da tela
     if (topPosition < 20) {
       topPosition = 20;
+    }
+
+    // Se o menu é muito alto, garante que ele fique visível
+    const maxHeight = Math.min(menuRect.height, viewportHeight - 40);
+    if (menuRect.height > maxHeight) {
+      menu.style.maxHeight = `${maxHeight}px`;
+      menu.style.overflowY = "auto";
     }
 
     // Aplicar posição final ao container

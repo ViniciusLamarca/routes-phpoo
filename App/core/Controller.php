@@ -15,7 +15,7 @@ class Controller
 
         list($controller, $method) = explode('@', $router);
 
-        $namespace = 'app\controllers\\';
+        $namespace = 'App\Controllers\\';
         $controllerNamespace = $namespace . $controller;
 
         if (!class_exists($controllerNamespace)) {
