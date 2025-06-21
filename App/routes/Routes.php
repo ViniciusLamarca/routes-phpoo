@@ -24,8 +24,12 @@ class Routes
                 //auth
                 '/PHP-POO/routes-phpoo/public/login.php' => 'AuthController@showLogin',
                 'login.php' => 'AuthController@showLogin',
+                '/PHP-POO/routes-phpoo/public/login' => 'AuthController@showLogin',
+                'login' => 'AuthController@showLogin',
                 '/PHP-POO/routes-phpoo/public/logout.php' => 'AuthController@logout',
                 'logout.php' => 'AuthController@logout',
+                '/PHP-POO/routes-phpoo/public/logout' => 'AuthController@logout',
+                'logout' => 'AuthController@logout',
 
                 //user
                 '/PHP-POO/routes-phpoo/public/user.php' => 'UserController@index',
@@ -64,6 +68,8 @@ class Routes
                 //auth
                 '/PHP-POO/routes-phpoo/public/login.php' => 'AuthController@authenticate',
                 'login.php' => 'AuthController@authenticate',
+                '/PHP-POO/routes-phpoo/public/authenticate' => 'AuthController@authenticate',
+                'authenticate' => 'AuthController@authenticate',
 
                 //user
                 '/PHP-POO/routes-phpoo/public/user.php/edit/id=([a-zA-Z0-9]+)' => 'UserController@edit',
