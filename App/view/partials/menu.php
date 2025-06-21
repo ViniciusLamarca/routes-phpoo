@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-success sticky-top shadow-sm custom-navbar">
+<nav class="navbar navbar-expand-lg navbar-dark sticky-top shadow-sm custom-navbar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
     <a class="navbar-brand" href="/PHP-POO/routes-phpoo/public/">
         <i class="fas fa-leaf"></i> Meu Sistema
     </a>

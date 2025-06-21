@@ -1,0 +1,176 @@
+/* ===== CORREÇÕES ESPECÍFICAS PARA DROPDOWNS DO NAVBAR ===== */
+
+/* Garantir que dropdowns do navbar tenham prioridade sobre sidebar */
+.navbar .dropdown-menu {
+  z-index: 1200 !important;
+  position: absolute !important;
+  display: none !important;
+  background-color: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.15) !important;
+  border-radius: 0.375rem !important;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.175) !important;
+  min-width: 160px !important;
+  padding: 0.5rem 0 !important;
+  margin: 0.125rem 0 0 !important;
+  font-size: 1rem !important;
+  color: #212529 !important;
+  text-align: left !important;
+  list-style: none !important;
+  background-clip: padding-box !important;
+  transform: none !important;
+}
+
+.navbar .dropdown-menu.show {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Itens do dropdown */
+.navbar .dropdown-item {
+  display: block !important;
+  width: 100% !important;
+  padding: 0.25rem 1rem !important;
+  clear: both !important;
+  font-weight: 400 !important;
+  color: #212529 !important;
+  text-align: inherit !important;
+  text-decoration: none !important;
+  white-space: nowrap !important;
+  background-color: transparent !important;
+  border: 0 !important;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out !important;
+}
+
+.navbar .dropdown-item:hover,
+.navbar .dropdown-item:focus {
+  color: #1e2125 !important;
+  background-color: #e9ecef !important;
+  text-decoration: none !important;
+}
+
+.navbar .dropdown-item.active,
+.navbar .dropdown-item:active {
+  color: #fff !important;
+  background-color: #0d6efd !important;
+  text-decoration: none !important;
+}
+
+/* Seta do dropdown */
+.navbar .dropdown-toggle::after {
+  display: inline-block !important;
+  margin-left: 0.255em !important;
+  vertical-align: 0.255em !important;
+  content: "" !important;
+  border-top: 0.3em solid !important;
+  border-right: 0.3em solid transparent !important;
+  border-bottom: 0 !important;
+  border-left: 0.3em solid transparent !important;
+}
+
+.navbar .dropdown-toggle:empty::after {
+  margin-left: 0 !important;
+}
+
+/* Divisor */
+.navbar .dropdown-divider {
+  height: 0 !important;
+  margin: 0.5rem 0 !important;
+  overflow: hidden !important;
+  border-top: 1px solid #e9ecef !important;
+}
+
+/* Header do dropdown */
+.navbar .dropdown-header {
+  display: block !important;
+  padding: 0.5rem 1rem !important;
+  margin-bottom: 0 !important;
+  font-size: 0.875rem !important;
+  color: #6c757d !important;
+  white-space: nowrap !important;
+}
+
+/* Posicionamento específico para dropdown-menu-end */
+.navbar .dropdown-menu-end {
+  --bs-position: end !important;
+  right: 0 !important;
+  left: auto !important;
+}
+
+/* Correções específicas para mobile */
+@media (max-width: 991.98px) {
+  .navbar .dropdown-menu {
+    z-index: 1250 !important;
+    position: static !important;
+    float: none !important;
+    width: auto !important;
+    margin-top: 0 !important;
+    background-color: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+  }
+
+  .navbar .dropdown-menu.show {
+    display: block !important;
+  }
+
+  .navbar .dropdown-item {
+    color: rgba(255, 255, 255, 0.55) !important;
+  }
+
+  .navbar .dropdown-item:hover,
+  .navbar .dropdown-item:focus {
+    color: rgba(255, 255, 255, 0.75) !important;
+    background-color: transparent !important;
+  }
+}
+
+/* Garantir que não haja interferência da sidebar nos dropdowns do navbar */
+.navbar .dropdown-toggle[aria-expanded="true"] + .dropdown-menu {
+  display: block !important;
+}
+
+/* Prevenir que estilos da sidebar afetem o navbar */
+.sidebar .dropdown-menu {
+  /* Estilos específicos da sidebar não devem afetar navbar */
+}
+
+/* Correção para o z-index em diferentes contextos */
+body.has-sidebar .navbar .dropdown-menu,
+body.sidebar-compact .navbar .dropdown-menu,
+body.sidebar-open .navbar .dropdown-menu {
+  z-index: 1200 !important;
+  position: absolute !important;
+}
+
+/* Animações suaves para dropdowns do navbar */
+.navbar .dropdown-menu {
+  transition: opacity 0.15s ease, visibility 0.15s ease !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.navbar .dropdown-menu.show {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Correção para o collapse do navbar em mobile */
+.navbar-collapse.collapse.show .dropdown-menu {
+  display: block !important;
+}
+
+/* Garantir que o navbar-toggler funcione corretamente */
+.navbar-toggler {
+  z-index: 1100 !important;
+}
+
+/* Correção específica para quando sidebar está ativa */
+@media (min-width: 992px) {
+  body.has-sidebar .navbar .dropdown-menu,
+  body.sidebar-compact .navbar .dropdown-menu {
+    position: absolute !important;
+    z-index: 1200 !important;
+    transform: none !important;
+  }
+}

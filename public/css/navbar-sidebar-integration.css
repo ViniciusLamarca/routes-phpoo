@@ -1,4 +1,5 @@
 /* ===== INTEGRAÇÃO NAVBAR + SIDEBAR ===== */
+/* IMPORTANTE: Este arquivo gerencia apenas POSICIONAMENTO, não funcionalidade de dropdowns */
 
 /* Sobrescrever estilos do Bootstrap para integração perfeita */
 
@@ -42,10 +43,11 @@ body.sidebar-loaded .navbar {
     left: 80px;
   }
 
-  /* Garantir que dropdowns funcionem corretamente */
+  /* IMPORTANTE: Não mexer na funcionalidade dos dropdowns, apenas posicionamento */
   body.has-sidebar .navbar .dropdown-menu {
-    position: absolute;
-    transform: none;
+    /* Manter posicionamento absoluto para dropdowns funcionarem */
+    position: absolute !important;
+    /* Não alterar display ou z-index aqui - é gerenciado pelo navbar-dropdown-fix.css */
   }
 }
 
@@ -105,11 +107,12 @@ body.sidebar-loading .navbar {
   flex-wrap: nowrap !important;
 }
 
-/* Dropdown menu positioning */
+/* Dropdown menu positioning - APENAS posicionamento, não funcionalidade */
 @media (min-width: 992px) {
   body.has-sidebar .navbar .dropdown-menu-end {
     right: 15px !important;
     left: auto !important;
+    /* Z-index gerenciado pelo navbar-dropdown-fix.css */
   }
 }
 

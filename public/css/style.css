@@ -1,176 +1,355 @@
 /* Reset de estilos e configurações globais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 /* Estilo padrão para o body */
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 16px;
-    background-color: #f2f2f2;
-    margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background-attachment: fixed;
+  margin: 0;
+  min-height: 100vh;
 }
 
 /* Estilos para a barra de navegação */
 .navbar {
-    background-color: #333;
-    color: #fff;
-    padding: 20px 0;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 1000; /* Garante que a navbar esteja acima da sidebar */
-    box-shadow: 3px 4px 3px 4px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Garante que a navbar esteja acima da sidebar */
+  box-shadow: 3px 4px 3px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px; /* Espaçamento interno para a navbar */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px; /* Espaçamento interno para a navbar */
 }
 
 .navbar .logo a {
-    color: #fff;
-    font-size: 1.5em;
-    text-decoration: none;
+  color: #fff;
+  font-size: 1.5em;
+  text-decoration: none;
 }
 
 .navbar .nav-links {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
 }
 
 .navbar .nav-links li {
-    margin-left: 15px;
+  margin-left: 15px;
 }
 
 .navbar .nav-links li a {
-    color: #fff;
-    text-decoration: none;
-    font-size: 1.1em;
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.1em;
 }
 
 .navbar .nav-links li a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 /* Estilos para a sidebar */
 .sidebar {
-    width: 250px;
-    height: 100%;
-    background-color: #333;
-    color: #fff;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; /* Scroll caso a altura da sidebar seja maior que a tela */
-    padding-top: 60px; /* Espaçamento para não sobrepor a navbar */
-    z-index: 900; /* Garante que a sidebar esteja abaixo da navbar */
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-y: auto; /* Scroll caso a altura da sidebar seja maior que a tela */
+  padding-top: 60px; /* Espaçamento para não sobrepor a navbar */
+  z-index: 900; /* Garante que a sidebar esteja abaixo da navbar */
 }
 
 .sidebar .logo {
-    background-color: #222;
-    padding: 15px;
-    font-size: 1.5em;
-    text-align: center;
+  background-color: #222;
+  padding: 15px;
+  font-size: 1.5em;
+  text-align: center;
 }
 
 .sidebar .sidebar-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .sidebar .sidebar-links li {
-    padding: 10px 15px;
+  padding: 10px 15px;
 }
 
 .sidebar .sidebar-links li a {
-    color: #fff;
-    text-decoration: none;
-    display: block;
+  color: #fff;
+  text-decoration: none;
+  display: block;
 }
 
 .sidebar .sidebar-links li.active {
-    background-color: #555;
+  background-color: #555;
 }
 
 .sidebar .sidebar-links li:hover {
-    background-color: #555;
+  background-color: #555;
 }
 
 /* Ajuste de margem para o conteúdo principal não ficar escondido sob a sidebar */
 .main-content {
-    margin-left: 250px; /* Largura da sidebar */
-    padding-top: 70px; /* Espaçamento igual ao da navbar */
-    padding-left: 20px; /* Espaçamento interno para o conteúdo principal */
-    /* Ajuste conforme necessário */
+  margin-left: 250px; /* Largura da sidebar */
+  padding-top: 70px; /* Espaçamento igual ao da navbar */
+  padding-left: 20px; /* Espaçamento interno para o conteúdo principal */
+  /* Ajuste conforme necessário */
 }
 
 /* Estilo para o conteúdo principal */
 .main-content main,
 .main-content section,
 .main-content form {
-    background-color: #fff;
-    padding: 20px;
-    margin-bottom: 20px; /* Espaçamento entre os elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  padding: 30px;
+  margin-bottom: 25px;
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }
 
 .main-content main h1,
 .main-content section h1,
 .main-content form h1 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: 600;
 }
 
 .main-content main p,
 .main-content section p,
 .main-content form p {
-    line-height: 1.6;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 15px;
 }
 
 /* Estilo específico para formulários dentro do conteúdo principal */
 .main-content form {
-    max-width: 600px; /* Largura máxima do formulário */
-    margin: 0 auto; /* Centralizar o formulário na página */
+  max-width: 600px; /* Largura máxima do formulário */
+  margin: 0 auto; /* Centralizar o formulário na página */
 }
 
 .main-content form label {
-    display: block;
-    margin-bottom: 8px;
+  display: block;
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: 500;
 }
 
 .main-content form input[type="text"],
 .main-content form input[type="email"],
+.main-content form input[type="password"],
+.main-content form select,
 .main-content form textarea {
-    width: calc(100% - 20px); /* Ajuste para compensar o padding do conteúdo */
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1em;
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  border: 1px solid rgba(102, 126, 234, 0.3);
+  border-radius: 8px;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.main-content form input[type="text"]:focus,
+.main-content form input[type="email"]:focus,
+.main-content form input[type="password"]:focus,
+.main-content form select:focus,
+.main-content form textarea:focus {
+  border-color: #667eea;
+  box-shadow: 0 0 15px rgba(102, 126, 234, 0.2);
+  outline: none;
 }
 
 .main-content form textarea {
-    height: 120px; /* Altura específica para textarea */
+  height: 120px; /* Altura específica para textarea */
+  resize: vertical;
 }
 
-.main-content form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 12px 20px;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 4px;
+.main-content form input[type="submit"],
+.main-content form button[type="submit"],
+.btn-primary {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1em;
+  cursor: pointer;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
 }
 
-.main-content form input[type="submit"]:hover {
-    background-color: #555;
+.main-content form input[type="submit"]:hover,
+.main-content form button[type="submit"]:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Cards e containers */
+.card {
+  background: rgba(255, 255, 255, 0.95);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+  margin-bottom: 25px;
+}
+
+.card-header {
+  background: rgba(102, 126, 234, 0.1);
+  border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+  padding: 20px;
+  border-radius: 15px 15px 0 0;
+}
+
+.card-body {
+  padding: 25px;
+}
+
+/* Tabelas */
+.table {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+.table thead th {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 15px;
+  font-weight: 600;
+}
+
+.table tbody td {
+  padding: 15px;
+  border-bottom: 1px solid rgba(102, 126, 234, 0.1);
+}
+
+.table tbody tr:hover {
+  background: rgba(102, 126, 234, 0.05);
+}
+
+/* Botões secundários */
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #333;
+  border-radius: 8px;
+  padding: 10px 20px;
+  transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Alertas e notificações */
+.alert {
+  border: none;
+  border-radius: 10px;
+  padding: 15px 20px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background: rgba(40, 167, 69, 0.1);
+  color: #155724;
+  border-left: 4px solid #28a745;
+}
+
+.alert-danger {
+  background: rgba(220, 53, 69, 0.1);
+  color: #721c24;
+  border-left: 4px solid #dc3545;
+}
+
+.alert-info {
+  background: rgba(13, 202, 240, 0.1);
+  color: #0c5460;
+  border-left: 4px solid #0dcaf0;
+}
+
+.alert-warning {
+  background: rgba(255, 193, 7, 0.1);
+  color: #856404;
+  border-left: 4px solid #ffc107;
+}
+
+/* WRAPPER E CONTEUDO PRINCIPAL */
+.main-wrapper {
+  transition: margin-left 0.3s ease;
+  flex-grow: 1; /* Garante que o wrapper ocupe o espaço restante */
+}
+
+main {
+  padding: 1.5rem;
+  width: 100%;
+}
+
+/* --- ESTILOS PARA DESKTOP --- */
+@media (min-width: 992px) {
+  /* Layout com sidebar expandida */
+  body.has-sidebar .main-wrapper {
+    margin-left: 280px;
+  }
+
+  /* Layout com sidebar compacta */
+  body.sidebar-compact .main-wrapper {
+    margin-left: 80px;
+  }
+}
+
+/* --- ESTILOS PARA TABLET E MOBILE --- */
+@media (max-width: 991.98px) {
+  /* Em telas menores, o conteúdo principal ocupa toda a largura */
+  body.has-sidebar .main-wrapper {
+    margin-left: 0;
+  }
+
+  main {
+    padding: 1rem; /* Reduz o padding em telas menores */
+  }
+}
+
+/* --- AJUSTES FINOS PARA MOBILE PEQUENO --- */
+@media (max-width: 576px) {
+  main {
+    padding: 0.75rem; /* Padding ainda menor para telas pequenas */
+  }
+
+  /* Ajusta o padding do topo para compensar a navbar */
+  body.has-sidebar main {
+    padding-top: calc(56px + 1rem);
+  }
 }

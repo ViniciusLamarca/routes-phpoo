@@ -71,9 +71,10 @@ class SidebarManager {
 
   setupDropdowns() {
     // Usar event delegation para evitar problemas com múltiplos listeners
+    // IMPORTANTE: Apenas para dropdowns da SIDEBAR, não do navbar
     this.sidebar.addEventListener("click", (e) => {
       const toggle = e.target.closest(
-        ".dropdown-toggle, .dropdown-toggle-floating"
+        ".sidebar .dropdown-toggle, .sidebar .dropdown-toggle-floating"
       );
       if (toggle) {
         e.preventDefault();
@@ -82,17 +83,18 @@ class SidebarManager {
       }
     });
 
-    // Fechar dropdowns ao clicar fora
+    // Fechar dropdowns da sidebar ao clicar fora (mas não afetar navbar)
     document.addEventListener("click", (e) => {
       if (
         !this.sidebar.contains(e.target) &&
-        !this.isClickInFloatingMenu(e.target)
+        !this.isClickInFloatingMenu(e.target) &&
+        !e.target.closest(".navbar") // Não fechar se clicou no navbar
       ) {
         this.closeAllDropdowns();
       }
     });
 
-    // Fechar dropdown flutuante ao pressionar ESC
+    // Fechar dropdown flutuante da sidebar ao pressionar ESC
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         this.closeAllDropdowns();
@@ -285,8 +287,9 @@ class SidebarManager {
   }
 
   closeAllDropdowns(exceptToggle = null) {
+    // Apenas fechar dropdowns da SIDEBAR, não do navbar
     const openDropdowns = this.sidebar.querySelectorAll(
-      '.dropdown-toggle[aria-expanded="true"], .dropdown-toggle-floating[aria-expanded="true"]'
+      '.sidebar .dropdown-toggle[aria-expanded="true"], .sidebar .dropdown-toggle-floating[aria-expanded="true"]'
     );
 
     openDropdowns.forEach((toggle) => {
@@ -354,8 +357,9 @@ class SidebarManager {
   }
 
   repositionFloatingDropdowns() {
-    const openFloatingDropdowns = document.querySelectorAll(
-      '.dropdown-toggle-floating[aria-expanded="true"]'
+    // Apenas reposicionar dropdowns flutuantes da SIDEBAR
+    const openFloatingDropdowns = this.sidebar.querySelectorAll(
+      '.sidebar .dropdown-toggle-floating[aria-expanded="true"]'
     );
 
     openFloatingDropdowns.forEach((toggle) => {

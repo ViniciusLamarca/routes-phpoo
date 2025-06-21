@@ -23,8 +23,8 @@ class Routes
                 //products
                 '/PHP-POO/routes-phpoo/public/products.php' => 'ProductController@index',
 
-                //register
-                '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@Register',
+                //register (temporariamente desabilitado - usuários serão funcionários da empresa)
+                // '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@Register',
 
                 //tree
                 '/PHP-POO/routes-phpoo/public/arvores.php' => 'TreeController@index',
@@ -43,9 +43,9 @@ class Routes
                 '/PHP-POO/routes-phpoo/public/produtos.php/delete/([0-9]+)' => 'ProductController@delete',
                 '/PHP-POO/routes-phpoo/public/produtos.php/edit/([0-9]+)' => 'ProductController@edit',
 
-                //register
-                '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@insert',
-                '/PHP-POO/routes-phpoo/public/register.php/([a-zA-Z0-9]+)' => 'RegisterController@insert',
+                //register (temporariamente desabilitado - usuários serão funcionários da empresa)
+                // '/PHP-POO/routes-phpoo/public/register.php' => 'RegisterController@insert',
+                // '/PHP-POO/routes-phpoo/public/register.php/([a-zA-Z0-9]+)' => 'RegisterController@insert',
             ]
         ];
     }
