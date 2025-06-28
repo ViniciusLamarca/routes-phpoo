@@ -31,38 +31,11 @@
             transition: none !important;
         }
 
-        /* Reativar transições após o carregamento via JS */
         body.sidebar-loaded * {
             -webkit-transition: unset !important;
             -moz-transition: unset !important;
             -o-transition: unset !important;
             transition: unset !important;
-        }
-
-        /* Correção específica para dropdowns do navbar */
-        .navbar .dropdown-menu {
-            z-index: 1100 !important;
-            display: none;
-            position: absolute;
-            background-color: #fff;
-            border: 1px solid rgba(0, 0, 0, .15);
-            border-radius: 0.375rem;
-            box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .175);
-        }
-
-        .navbar .dropdown-menu.show {
-            display: block !important;
-        }
-
-        .navbar .dropdown-toggle::after {
-            display: inline-block;
-            margin-left: 0.255em;
-            vertical-align: 0.255em;
-            content: "";
-            border-top: 0.3em solid;
-            border-right: 0.3em solid transparent;
-            border-bottom: 0;
-            border-left: 0.3em solid transparent;
         }
     </style>
 </head>
@@ -313,5 +286,31 @@
 </script>
 <!-- Debug apenas em desenvolvimento -->
 <script src="/PHP-POO/routes-phpoo/public/js/sidebar-debug.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        function handleNavbarCollapse() {
+            var navbarCollapse = document.querySelector('.navbar-collapse');
+            var navbarToggler = document.querySelector('.navbar-toggler');
+            if (!navbarCollapse) return;
+
+            if (window.innerWidth >= 992) {
+                // Desktop: sempre expandido
+                navbarCollapse.classList.add('show');
+                if (navbarToggler) navbarToggler.setAttribute('aria-expanded', 'true');
+            } else {
+                // Mobile: sempre colapsado
+                navbarCollapse.classList.remove('show');
+                if (navbarToggler) navbarToggler.setAttribute('aria-expanded', 'false');
+            }
+        }
+
+        // Executa ao carregar e ao redimensionar
+        handleNavbarCollapse();
+        window.addEventListener('resize', handleNavbarCollapse);
+    });
+</script>
+
+<script src="/PHP-POO/routes-phpoo/public/js/navbar.js"></script>
 
 </html>
