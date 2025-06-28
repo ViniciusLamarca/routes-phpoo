@@ -54,7 +54,11 @@ class Application
             $response = $router->dispatch($request);
 
             if (!$response instanceof Response) {
-                $response = new Response($response);
+                if ($response === null) {
+                    $response = new Response('Erro interno: resposta vazia do controller.', 500);
+                } else {
+                    $response = new Response((string)$response);
+                }
             }
 
             $response->send();

@@ -18,7 +18,7 @@ class View
             $templatePath = '../app/view';
 
             if (!file_exists($viewPath)) {
-                throw new \Exception("View {$view} not found in App/view or app/view");
+                throw new \Exception("View '{$view}' não encontrada em App/view ou app/view");
             }
         }
 

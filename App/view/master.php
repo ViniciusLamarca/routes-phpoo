@@ -81,24 +81,8 @@
             });
         });
 
-        // Garantir que dropdowns do navbar funcionem corretamente
-        $('.navbar .dropdown-toggle').on('click', function(e) {
-            e.preventDefault();
-            var $dropdown = $(this).next('.dropdown-menu');
-
-            // Fechar outros dropdowns
-            $('.navbar .dropdown-menu').not($dropdown).removeClass('show');
-
-            // Toggle do dropdown atual
-            $dropdown.toggleClass('show');
-        });
-
-        // Fechar dropdown ao clicar fora
-        $(document).on('click', function(e) {
-            if (!$(e.target).closest('.navbar .dropdown').length) {
-                $('.navbar .dropdown-menu').removeClass('show');
-            }
-        });
+        // [REMOVIDO] Controle manual de dropdowns do menu para evitar conflito com Bootstrap 5
+        // O Bootstrap 5 já gerencia dropdowns via data-bs-toggle="dropdown" automaticamente.
     });
 
     document.onkeydown = function($e) {

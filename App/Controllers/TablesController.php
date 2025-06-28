@@ -9,6 +9,7 @@ class TablesController extends Controller
      */
     public function index()
     {
+        $this->requireAuth();
         $status = $_GET['status'] ?? 'all';
 
         try {

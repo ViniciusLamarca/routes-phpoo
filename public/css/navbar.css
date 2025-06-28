@@ -324,3 +324,53 @@ body.sidebar-loaded .navbar {
     display: block;
   }
 }
+
+/* ===== MELHORIA DE ESPAÇAMENTO ENTRE ITENS DO MENU DO TOPO ===== */
+/* Usar gap no container para separar o fundo de hover dos itens, evitando que fiquem colados. */
+@media (min-width: 992px) {
+  .navbar-nav {
+    gap: 0.7rem;
+  }
+  .navbar-nav .nav-link {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/* ===== ALINHAMENTO DE ALTURA DO MENU DO TOPO COM HEADER LATERAL ===== */
+@media (min-width: 992px) {
+  .navbar,
+  .custom-navbar {
+    min-height: 70px !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    height: 70px !important;
+    align-items: center;
+  }
+}
+
+/* ===== CORREÇÃO ESPECÍFICA DO MENU DO USUÁRIO NO TOPO ===== */
+@media (min-width: 992px) {
+  /* Ajuste apenas para o botão do usuário */
+  .navbar-nav .nav-item .nav-link#userDropdown {
+    display: flex;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 0;
+    height: 56px;
+    line-height: 56px;
+  }
+  .navbar-nav .nav-item .nav-link#userDropdown .avatar {
+    height: 32px;
+    width: 32px;
+    min-width: 32px;
+    min-height: 32px;
+    max-height: 32px;
+    max-width: 32px;
+    font-size: 1rem;
+    margin-right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

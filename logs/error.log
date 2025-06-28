@@ -19,3 +19,8 @@
 [28-Jun-2025 16:49:29 UTC] ERRO Fatal: Failed opening required 'C:\laragon\www\PHP-POO\routes-phpoo\vendor\composer/../../app/helpers/validations.php' (include_path='.;C:/laragon/etc/php/pear') em C:\laragon\www\PHP-POO\routes-phpoo\vendor\composer\autoload_real.php linha 41
 [28-Jun-2025 13:50:09 America/Sao_Paulo] ERRO Fatal: App\Core\Http\Response::__construct(): Argument #1 ($content) must be of type string, null given, called in C:\laragon\www\PHP-POO\routes-phpoo\App\core\Application.php on line 57 em C:\laragon\www\PHP-POO\routes-phpoo\App\core\Http\Response.php linha 11
 [28-Jun-2025 13:54:30 America/Sao_Paulo] ERRO Exception: Unable to resolve dependency [config] em C:\laragon\www\PHP-POO\routes-phpoo\App\core\Container\Container.php linha 108
+[28-Jun-2025 15:02:38 America/Sao_Paulo] ERRO Exception: Unable to resolve dependency [config] em C:\laragon\www\PHP-POO\routes-phpoo\App\core\Container\Container.php linha 108
+[28-Jun-2025 15:32:44 America/Sao_Paulo] ERRO Exception: Unable to resolve dependency [config] em C:\laragon\www\PHP-POO\routes-phpoo\App\core\Container\Container.php linha 108
+[28-Jun-2025 15:40:28 America/Sao_Paulo] [AuthMiddleware] Verificando autenticação para rota protegida: /PHP-POO/routes-phpoo/public/tables.php
+[28-Jun-2025 15:40:34 America/Sao_Paulo] [AuthMiddleware] Verificando autenticação para rota protegida: /PHP-POO/routes-phpoo/public/tables.php
+[28-Jun-2025 15:40:40 America/Sao_Paulo] [AuthMiddleware] Verificando autenticação para rota protegida: /PHP-POO/routes-phpoo/public/tables.php
