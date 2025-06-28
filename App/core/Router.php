@@ -2,32 +2,11 @@
 
 namespace app\core;
 
-use app\core\RoutersFilter;
-
+// Roteador antigo desativado. Use apenas o sistema de rotas moderno via web.php.
 class Router
 {
-    private static bool $executed = false;
-
     public static function run()
     {
-        // Prevenir execução múltipla
-        if (self::$executed) {
-            return;
-        }
-        self::$executed = true;
-
-        try {
-            $routerRegistered = new RoutersFilter;
-            $router = $routerRegistered->get();
-
-            $controller = new Controller;
-            $controller->execute($router);
-
-            /* dd($router); */
-        } catch (\Throwable $e) {
-            // Em caso de erro, mostrar mensagem simples
-            http_response_code(500);
-            echo "Erro interno: " . $e->getMessage();
-        }
+        throw new \Exception('O sistema de rotas antigo (Router.php) está desativado. Use apenas o roteador moderno via web.php.');
     }
 }

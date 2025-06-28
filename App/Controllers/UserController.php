@@ -28,8 +28,7 @@ class UserController extends Controller
         $users->setFilters($filters);
         $usersFound = $users->fetch_all();
 
-
-        $this->view('user', ['title' => 'Usuário', 'table' => $usersFound, 'page' => 'user.php']);
+        return $this->view('user', ['title' => 'Usuário', 'table' => $usersFound, 'page' => 'user.php']);
     }
     public function delete($parameters)
     {

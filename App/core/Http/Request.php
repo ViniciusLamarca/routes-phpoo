@@ -34,7 +34,15 @@ class Request
 
     public function uri(): string
     {
-        return parse_url($this->server['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+        $uri = parse_url($this->server['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+        $base = '/PHP-POO/routes-phpoo/public';
+        if (str_starts_with($uri, $base)) {
+            $uri = substr($uri, strlen($base));
+            if ($uri === '') {
+                $uri = '/';
+            }
+        }
+        return $uri;
     }
 
     public function fullUrl(): string

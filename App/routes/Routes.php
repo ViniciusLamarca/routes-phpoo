@@ -1,5 +1,8 @@
 <?php
 
+// AVISO: O roteamento principal da aplicação agora é feito via App/routes/web.php.
+// Não adicione novas rotas aqui. Para rotas protegidas e uso de middlewares, utilize web.php.
+
 namespace app\routes;
 
 use app\core\Router;
@@ -87,3 +90,4 @@ class Routes
         ];
     }
 }
+// Rotas de tables e reservations removidas. Utilize web.php para controle e autenticação.

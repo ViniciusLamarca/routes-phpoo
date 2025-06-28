@@ -15,7 +15,7 @@ class ChatController extends Controller
     public function index()
     {
         $user = $_SESSION['user'];
-        $this->view('chat_teste', [
+        return $this->view('chat_teste', [
             'title' => 'Chat',
             'user' => $user
         ]);

@@ -16,7 +16,7 @@ class HomeController extends Controller
 
         $user = $_SESSION['user'];
 
-        $this->view('home', [
+        return $this->view('home', [
             'title' => 'Início',
             'page_title' => 'Página Inicial',
             'current_page' => 'index.php',

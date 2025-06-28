@@ -15,13 +15,14 @@ class AuthController extends Controller
             exit;
         }
 
-        $this->view('auth/login', [
+        $output = $this->view('auth/login', [
             'title' => 'Login',
             'old_input' => $_SESSION['old_input'] ?? []
         ]);
 
         // Limpar old_input da sessão
         unset($_SESSION['old_input']);
+        return $output;
     }
 
     public function authenticate()
@@ -83,7 +84,7 @@ class AuthController extends Controller
             add_notification('Logout realizado com sucesso! Até logo, ' . $username . '!', 'info');
         }
 
-        header('Location: /PHP-POO/routes-phpoo/public/login');
+        header('Location: /PHP-POO/routes-phpoo/public/login.php');
         exit;
     }
 }

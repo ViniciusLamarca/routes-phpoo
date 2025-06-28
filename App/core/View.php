@@ -1,6 +1,6 @@
 <?php
 
-namespace app\core;
+namespace App\core;
 
 use League\Plates\Engine;
 
@@ -23,6 +23,6 @@ class View
         }
 
         $template = new Engine($templatePath);
-        echo $template->render($view, $data);
+        return $template->render($view, $data);
     }
 }

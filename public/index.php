@@ -17,12 +17,11 @@ try {
         session_start();
     }
 
-    if (class_exists('app\\core\\Router')) {
-        app\core\Router::run();
-    } else {
-        http_response_code(500);
-        echo "Erro interno: Classe Router não encontrada.";
-    }
+    // Carregar bootstrap moderno e rotas protegidas
+    $app = require_once __DIR__ . '/../App/bootstrap/app.php';
+    require_once __DIR__ . '/../App/routes/web.php';
+
+    $app->run();
 } catch (Exception $e) {
     error_log("ERRO Exception: " . $e->getMessage() . " em " . $e->getFile() . " linha " . $e->getLine());
     http_response_code(500);

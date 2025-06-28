@@ -23,6 +23,16 @@ return [
             'children' => []
         ],
         [
+            'id' => 'mesas',
+            'title' => 'Controle de Mesas',
+            'icon' => 'fas fa-utensils',
+            'link' => 'tables.php',
+            'page' => 'tables',
+            'permission' => null,
+            'order' => 15,
+            'children' => []
+        ],
+        [
             'id' => 'produtos',
             'title' => 'Produtos',
             'icon' => 'fas fa-box',

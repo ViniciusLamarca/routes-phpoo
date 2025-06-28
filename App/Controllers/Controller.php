@@ -9,7 +9,7 @@ abstract class Controller
 {
     protected function view(string $view, array $data = [])
     {
-        View::render($view, $data);
+        return \app\core\View::render($view, $data);
     }
 
     protected function redirect(string $url)

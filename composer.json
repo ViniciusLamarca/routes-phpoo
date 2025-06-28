@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "league/plates": "^3.5",
+        "league/plates": "^3.6",
         "symfony/var-dumper": "^6.4",
         "cboden/ratchet": "^0.4.4",
         "twbs/bootstrap": "^5.3"
@@ -19,11 +19,10 @@
             "app\\": "App/"
         },
         "files": [
-           "App/helpers/json.php",
-           "App/helpers/notifications.php",
-           "App/helpers/app.php",
-           "app/helpers/validations.php",
-           "app/helpers/sidebar_functions.php"
+            "App/helpers/json.php",
+            "App/helpers/notifications.php",
+            "App/helpers/app.php",
+            "app/helpers/sidebar_functions.php"
         ]
     },
     "scripts": {

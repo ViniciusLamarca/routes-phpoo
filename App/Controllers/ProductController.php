@@ -22,7 +22,7 @@ class ProductController extends Controller
         $produtosFound = $produtos->fetch_all();
 
 
-        $this->view('produtos', ['title' => 'Produtos', 'table' => $produtosFound]);
+        return $this->view('produtos', ['title' => 'Produtos', 'table' => $produtosFound]);
     }
     public function delete($parameters)
     {

@@ -19,6 +19,7 @@ $router->group(['middleware' => []], function (Router $router) {
     // Autenticação
     $router->get('/login.php', 'AuthController@showLogin')->name('login');
     $router->post('/login.php', 'AuthController@authenticate');
+    $router->post('/authenticate', 'AuthController@authenticate');
     $router->get('/logout.php', 'AuthController@logout')->name('logout');
 
     // Registro (desabilitado temporariamente)
@@ -41,6 +42,13 @@ $router->group(['middleware' => [AuthMiddleware::class]], function (Router $rout
     // Chat
     $router->get('/chat_teste.php', 'ChatController@index')->name('chat.index');
 
-    // Árvores (se existir)
-    // $router->get('/arvores.php', 'TreeController@index')->name('trees.index');
+    // Mesas (controle de mesas e reservas)
+    $router->get('/tables.php', 'TablesController@index')->name('tables.index');
+    $router->get('/tables', 'TablesController@index');
+    $router->post('/tables.php/update-status', 'TablesController@updateStatus')->name('tables.updateStatus');
+    $router->post('/tables/update-status', 'TablesController@updateStatus');
+    $router->get('/reservations.php', 'TablesController@reservations')->name('tables.reservations');
+    $router->get('/reservations', 'TablesController@reservations');
+    $router->post('/reservations.php/create', 'TablesController@createReservation')->name('tables.createReservation');
+    $router->post('/reservations/create', 'TablesController@createReservation');
 });
