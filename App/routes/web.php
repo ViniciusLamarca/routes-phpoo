@@ -42,6 +42,10 @@ $router->group(['middleware' => [AuthMiddleware::class]], function (Router $rout
     // Chat
     $router->get('/chat_teste.php', 'ChatController@index')->name('chat.index');
 
+    // Banco de Dados (administração)
+    $router->get('/database.php', 'DatabaseController@index')->name('database.index');
+    $router->get('/database', 'DatabaseController@index');
+
     // Mesas (controle de mesas e reservas)
     $router->get('/tables.php', 'TablesController@index')->name('tables.index');
     $router->get('/tables', 'TablesController@index');
